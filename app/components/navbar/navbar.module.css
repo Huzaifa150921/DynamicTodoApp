@@ -1,0 +1,47 @@
+.navbar {
+    width: 100%;
+    min-height: 5vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--navbar-bgcolor);
+    flex-wrap: wrap;
+}
+
+.navbar_heading {
+    font-size: 2rem;
+    color: var(--navbarheading-color);
+}
+
+.navbar_button {
+    padding: 0.8rem;
+    background-color: var(--navbarbutton-bgcolor);
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .navbar_heading {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .navbar_button {
+        padding: 0.6rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar_heading {
+        font-size: 1.2rem;
+    }
+
+    .navbar_button {
+        padding: 0.5rem;
+        font-size: 0.85rem;
+    }
+}
