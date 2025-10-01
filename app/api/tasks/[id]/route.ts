@@ -2,11 +2,12 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/app/lib/prisma";
 import { getAuthenticatedUser } from "@/app/lib/GetAuthenticatedUser";
 
-type Params = { params: { id: string } };
-
-// delete todos 
-export async function DELETE(req: NextRequest, context: Params) {
-    const { id: taskId } = context.params;
+// DELETE todos
+export async function DELETE(
+    req: NextRequest,
+    context: { params: Promise<{ id: string }> }
+) {
+    const { id: taskId } = await context.params;
 
     const { user, error } = await getAuthenticatedUser();
     if (error) return error;
@@ -29,9 +30,12 @@ export async function DELETE(req: NextRequest, context: Params) {
     return NextResponse.json(task);
 }
 
-// update todos
-export async function PUT(req: NextRequest, context: Params) {
-    const { id: taskId } = context.params;
+// UPDATE todos
+export async function PUT(
+    req: NextRequest,
+    context: { params: Promise<{ id: string }> }
+) {
+    const { id: taskId } = await context.params;
 
     const { user, error } = await getAuthenticatedUser();
     if (error) return error;
