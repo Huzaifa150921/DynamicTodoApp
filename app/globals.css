@@ -16,6 +16,12 @@
     --navbarheading-color: white;
     --navbarbutton-bgcolor: rgb(0, 174, 255);
 
+    /* Login  */
+
+    --login-bgcolor: rgb(0, 0, 250);
+    --loginheading-color: white;
+    --logincontent-color: rgb(219, 219, 219);
+
     /* Dashboard */
     --dashboard-bgcolor: rgb(130, 130, 255);
     --dashboard-color: #222222;
@@ -35,4 +41,11 @@
     --deletebutton-bgcolor: #ef4444;
     --deletebutton-color: white;
     --deletebutton-hoverbgcolor: #dc2626;
+    --dashboardupdateform-overlaybgcolor: rgba(0, 0, 0, 0.4);
+    --dashboardupdateformshadow-color: rgba(0, 0, 0, 0.25);
+    --dashboardcompletedtask-bgcolor: #d1fae5;
+    --dashboardcompletedtask-bordercolor: #10b981;
+    --dashboardcompletebutton-bgcolor: #28a745;
+    --dashboardcompletebutton-color: white;
+    --dashboardcompletebutton-hoverbgcolor: #218838;
 }

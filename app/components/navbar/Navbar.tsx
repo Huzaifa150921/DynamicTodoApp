@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './navbar.module.css'
-import { auth } from '@/app/lib/auth'
-import { LogoutButton } from '@/app/uielements/button/logout/LogoutButton'
+import { auth } from '@/app/lib/Auth'
+import { LogoutButton } from '@/app/components/uielements/button/logout/LogoutButton'
 const Navbar = async () => {
     const session = await auth();
     return (

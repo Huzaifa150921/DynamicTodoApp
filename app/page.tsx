@@ -1,6 +1,6 @@
 
 import Login from './components/auth/login/Login';
-import { auth } from '@/app/lib/auth';
+import { auth } from '@/app/lib/Auth';
 import { redirect } from 'next/navigation';
 
 const Page = async () => {

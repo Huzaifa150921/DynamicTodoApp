@@ -1,4 +1,4 @@
-import { signOut } from "@/app/lib/auth"
+import { signOut } from "@/app/lib/Auth"
 import styles from './logout.module.css'
 export function LogoutButton() {
     return (

@@ -1,6 +1,6 @@
 "use client";
 
-import { loginWithGoogle } from "@/app/uielements/button/login/loginauth";
+import { loginWithGoogle } from "@/app/components/uielements/button/login/loginauth";
 import Style from "./login.module.css";
 
 export default function LoginButton() {

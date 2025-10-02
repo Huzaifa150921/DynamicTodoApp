@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import styles from "./dashboard.module.css";
-import { notifySuccess, notifyError } from "@/app/uielements/toast/Notifier";
+import { notifySuccess, notifyError } from "@/app/components/uielements/toast/Notifier";
 
 
 type Task = {

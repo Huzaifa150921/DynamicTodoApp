@@ -1,6 +1,6 @@
-import { auth } from "@/app/lib/auth";
+import { auth } from "@/app/lib/Auth";
 import { redirect } from "next/navigation";
-import Tasks from "@/app/components/dashboard/Tasks";
+import Tasks from "@/app/components/dashboard/TodoList";
 
 export default async function DashboardPage() {
     const session = await auth();

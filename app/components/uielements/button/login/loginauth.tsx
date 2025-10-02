@@ -1,6 +1,6 @@
 "use server";
 
-import { signIn } from "@/app/lib/auth";
+import { signIn } from "@/app/lib/Auth";
 
 export async function loginWithGoogle() {
     await signIn("google");
