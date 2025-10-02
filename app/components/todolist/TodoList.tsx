@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import styles from "./dashboard.module.css";
+import styles from "./todo.module.css";
 import { notifySuccess, notifyError } from "@/app/components/uielements/toast/Notifier";
 
 
@@ -17,7 +17,7 @@ type Session = {
     };
 };
 
-export default function Tasks({ session }: { session: Session }) {
+export default function TodoList({ session }: { session: Session }) {
     const [tasks, setTasks] = useState<Task[]>([]);
     const [title, setTitle] = useState<string>("");
     const [loading, setLoading] = useState<boolean>(false);
@@ -113,8 +113,8 @@ export default function Tasks({ session }: { session: Session }) {
 
     return (
         <>
-            <div className={styles.dashboard}>
-                <h1 className={styles.dashboard_heading}>
+            <div className={styles.todo}>
+                <h1 className={styles.todo_heading}>
                     Welcome! {session?.user?.name || "User"}
                 </h1>
 
@@ -124,10 +124,10 @@ export default function Tasks({ session }: { session: Session }) {
                         name="title"
                         value={title}
                         onChange={(e) => setTitle(e.target.value)}
-                        className={styles.dashboard_input}
+                        className={styles.todo_input}
                         placeholder="Enter task here..."
                     />
-                    <button type="submit" className={styles.dashboard_add_button}>
+                    <button type="submit" className={styles.todo_add_button}>
                         Add Task
                     </button>
                 </form>
@@ -135,30 +135,30 @@ export default function Tasks({ session }: { session: Session }) {
                 {loading ? (
                     <p>Loading tasks...</p>
                 ) : tasks.length > 0 ? (
-                    <div className={styles.dashboard_task_list}>
+                    <div className={styles.todo_task_list}>
                         {tasks.map((task) => (
                             <div
                                 key={task.id}
-                                className={`${styles.dashboard_task_item} ${task.completed ? styles.dashboard_completed_task : ""
+                                className={`${styles.todo_task_item} ${task.completed ? styles.todo_completed_task : ""
                                     }`}
                             >
                                 <span>{task.title}</span>
-                                <div className={styles.dashboard_task_actions}>
+                                <div className={styles.todo_task_actions}>
                                     <button
-                                        className={styles.dashboard_complete_button}
+                                        className={styles.todo_complete_button}
                                         onClick={() => handleToggleComplete(task.id, task.completed)}
                                     >
                                         {task.completed ? "Completed" : "Todo"}
                                     </button>
                                     <button
-                                        className={styles.dashboard_edit_button}
+                                        className={styles.todo_edit_button}
                                         onClick={() => showForm(task)}
                                     >
                                         Edit
                                     </button>
                                     <button
                                         onClick={() => handleDeleteTask(task.id)}
-                                        className={styles.dashboard_delete_button}
+                                        className={styles.todo_delete_button}
                                     >
                                         Delete
                                     </button>
@@ -172,22 +172,22 @@ export default function Tasks({ session }: { session: Session }) {
             </div>
 
             {updateForm && (
-                <div className={styles.dashboard_updateform_overlay}>
-                    <form className={styles.dashboard_updateform} onSubmit={handleUpdateTask}>
+                <div className={styles.todo_updateform_overlay}>
+                    <form className={styles.todo_updateform} onSubmit={handleUpdateTask}>
                         <input
-                            className={styles.dashboard_updateforminput}
+                            className={styles.todo_updateforminput}
                             type="text"
                             value={updateTitle}
                             onChange={(e) => setUpdateTitle(e.target.value)}
                             placeholder="Update task..."
                         />
-                        <div className={styles.dashboard_updateform_actions}>
-                            <button type="submit" className={styles.dashboard_updateformbutton}>
+                        <div className={styles.todo_updateform_actions}>
+                            <button type="submit" className={styles.todo_updateformbutton}>
                                 Update
                             </button>
                             <button
                                 type="button"
-                                className={styles.dashboard_cancel_button}
+                                className={styles.todo_cancel_button}
                                 onClick={closeForm}
                             >
                                 Cancel

@@ -1,4 +1,4 @@
-    .dashboard {
+    .todo {
         width: 40%;
         min-width: 320px;
         max-width: 90%;
@@ -21,7 +21,7 @@
         transition: all 0.3s ease;
     }
 
-    .dashboard form {
+    .todo form {
         display: flex;
         gap: 0.5rem;
         width: 70%;
@@ -31,13 +31,13 @@
 
     }
 
-    .dashboard_heading {
+    .todo_heading {
         font-size: 1.5rem;
         font-weight: 600;
         text-align: center;
     }
 
-    .dashboard_input {
+    .todo_input {
         padding: 0.75rem 1rem;
         border: 1px solid var(--dashboardinput-bordercolor);
         border-radius: 0.5rem;
@@ -47,12 +47,12 @@
         width: 100%;
     }
 
-    .dashboard_input:focus {
+    .todo_input:focus {
         border-color: var(--dashboardinput-focusbordercolor);
         box-shadow: 0 0 0 3px var(--dashboardinput-focusboxshadowcolor);
     }
 
-    .dashboard_task_list {
+    .todo_task_list {
         display: flex;
         flex-direction: column;
         gap: 0.75rem;
@@ -63,7 +63,7 @@
         width: 100%;
     }
 
-    .dashboard_task_item {
+    .todo_task_item {
         padding: 0.75rem 1rem;
         border-radius: 0.5rem;
         background-color: var(--taskitem-bgcolor);
@@ -77,17 +77,17 @@
         flex-wrap: wrap;
     }
 
-    .dashboard_task_item:hover {
+    .todo_task_item:hover {
         background-color: var(--taskitem-hoverbgcolor);
     }
 
-    .dashboard_task_actions {
+    .todo_task_actions {
         display: flex;
         gap: 0.5rem;
         flex-wrap: wrap;
     }
 
-    .dashboard_add_button {
+    .todo_add_button {
         padding: 0.7rem 1.2rem;
         background-color: var(--addbutton-bgcolor);
         color: var(--addbutton-color);
@@ -98,11 +98,11 @@
         transition: background 0.2s;
     }
 
-    .dashboard_add_button:hover {
+    .todo_add_button:hover {
         background-color: var(--addbutton-hoverbgcolor);
     }
 
-    .dashboard_edit_button {
+    .todo_edit_button {
         padding: 0.4rem 0.8rem;
         background-color: var(--editbutton-bgcolor);
         color: var(--editbutton-color);
@@ -113,11 +113,11 @@
         transition: background 0.2s;
     }
 
-    .dashboard_edit_button:hover {
+    .todo_edit_button:hover {
         background-color: var(--editbutton-hoverbgcolor);
     }
 
-    .dashboard_delete_button {
+    .todo_delete_button {
         padding: 0.4rem 0.8rem;
         background-color: var(--deletebutton-bgcolor);
         color: var(--deletebutton-color);
@@ -128,12 +128,12 @@
         transition: background 0.2s;
     }
 
-    .dashboard_delete_button:hover {
+    .todo_delete_button:hover {
         background-color: var(--deletebutton-hoverbgcolor);
     }
 
 
-    .dashboard_updateform_overlay {
+    .todo_updateform_overlay {
         position: fixed;
         top: 0;
         left: 0;
@@ -147,7 +147,7 @@
     }
 
 
-    .dashboard_updateform {
+    .todo_updateform {
         width: 400px;
         max-width: 90%;
         background-color: var(--dashboard-bgcolor);
@@ -163,7 +163,7 @@
     }
 
 
-    .dashboard_updateforminput {
+    .todo_updateforminput {
         width: 100%;
         padding: 0.75rem 1rem;
         border: 1px solid var(--dashboardinput-bordercolor);
@@ -173,13 +173,13 @@
         transition: border 0.2s, box-shadow 0.2s;
     }
 
-    .dashboard_updateforminput:focus {
+    .todo_updateforminput:focus {
         border-color: var(--dashboardinput-focusbordercolor);
         box-shadow: 0 0 0 3px var(--dashboardinput-focusboxshadowcolor);
     }
 
 
-    .dashboard_updateformbutton {
+    .todo_updateformbutton {
         padding: 0.7rem 1.2rem;
         background-color: var(--editbutton-bgcolor);
         color: var(--editbutton-color);
@@ -190,12 +190,12 @@
         transition: background 0.2s;
     }
 
-    .dashboard_updateformbutton:hover {
+    .todo_updateformbutton:hover {
         background-color: var(--editbutton-hoverbgcolor);
     }
 
 
-    .dashboard_cancel_button {
+    .todo_cancel_button {
         padding: 0.7rem 1.2rem;
         background-color: var(--deletebutton-bgcolor);
         color: var(--deletebutton-color);
@@ -206,29 +206,29 @@
         transition: background 0.2s;
     }
 
-    .dashboard_cancel_button:hover {
+    .todo_cancel_button:hover {
         background-color: var(--deletebutton-hoverbgcolor);
     }
 
-    .dashboard_updateform_actions {
+    .todo_updateform_actions {
         display: flex;
         gap: 0.8rem;
         justify-content: flex-end;
     }
 
-    .dashboard_completed_task {
+    .todo_completed_task {
         background-color: var(--dashboardcompletedtask-bgcolor);
         border: 1px solid var(--dashboardcompletedtask-bordercolor);
 
 
     }
 
-    .dashboard_completed_task span {
+    .todo_completed_task span {
         text-decoration: line-through;
     }
 
 
-    .dashboard_complete_button {
+    .todo_complete_button {
         padding: 0.4rem 0.8rem;
         background-color: var(--dashboardcompletebutton-bgcolor);
         color: var(--dashboardcompletebutton-color);
@@ -239,75 +239,75 @@
         transition: background 0.2s;
     }
 
-    .dashboard_complete_button:hover {
+    .todo_complete_button:hover {
         background-color: var(--dashboardcompletebutton-hoverbgcolor);
     }
 
 
     @media (max-width: 1024px) {
-        .dashboard {
+        .todo {
             width: 60%;
         }
 
-        .dashboard_heading {
+        .todo_heading {
             font-size: 1.3rem;
         }
 
-        .dashboard_add_button,
-        .dashboard_edit_button,
-        .dashboard_delete_button {
+        .todo_add_button,
+        .todo_edit_button,
+        .todo_delete_button {
             font-size: 0.9rem;
             padding: 0.6rem 1rem;
         }
     }
 
     @media (max-width: 768px) {
-        .dashboard {
+        .todo {
             width: 80%;
             padding: 0.8rem;
         }
 
-        .dashboard_heading {
+        .todo_heading {
             font-size: 1.2rem;
         }
 
-        .dashboard_input {
+        .todo_input {
             font-size: 0.95rem;
             padding: 0.6rem 0.8rem;
         }
 
-        .dashboard_add_button,
-        .dashboard_edit_button,
-        .dashboard_delete_button {
+        .todo_add_button,
+        .todo_edit_button,
+        .todo_delete_button {
             font-size: 0.85rem;
             padding: 0.5rem 0.8rem;
         }
     }
 
     @media (max-width: 480px) {
-        .dashboard {
+        .todo {
             width: 95%;
             padding: 0.6rem;
             gap: 1rem;
         }
 
-        .dashboard_heading {
+        .todo_heading {
             font-size: 1rem;
         }
 
-        .dashboard_input {
+        .todo_input {
             font-size: 0.9rem;
             padding: 0.5rem 0.7rem;
         }
 
-        .dashboard_add_button,
-        .dashboard_edit_button,
-        .dashboard_delete_button {
+        .todo_add_button,
+        .todo_edit_button,
+        .todo_delete_button {
             font-size: 0.8rem;
             padding: 0.4rem 0.7rem;
         }
 
-        .dashboard_task_item {
+        .todo_task_item {
             gap: 0.5rem;
             flex-direction: column;
             align-items: flex-start;
@@ -328,30 +328,30 @@
     }
 
     @media (max-width: 768px) {
-        .dashboard_updateform {
+        .todo_updateform {
             width: 90%;
             padding: 1rem;
         }
 
-        .dashboard_updateformbutton {
+        .todo_updateformbutton {
             font-size: 0.9rem;
             padding: 0.6rem 1rem;
         }
     }
 
     @media (max-width: 480px) {
-        .dashboard_updateform {
+        .todo_updateform {
             width: 95%;
             padding: 0.8rem;
             gap: 0.8rem;
         }
 
-        .dashboard_updateforminput {
+        .todo_updateforminput {
             font-size: 0.9rem;
             padding: 0.6rem 0.8rem;
         }
 
-        .dashboard_updateformbutton {
+        .todo_updateformbutton {
             font-size: 0.85rem;
             padding: 0.5rem 0.8rem;
         }

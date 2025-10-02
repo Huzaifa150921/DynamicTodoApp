@@ -1,16 +1,15 @@
+import Login from '@/app/components/auth/login/Login';
 import { auth } from '@/app/lib/Auth';
 import { redirect } from 'next/navigation';
 
-const Page = async () => {
+const LoginPage = async () => {
   const session = await auth();
 
   if (session?.user) {
     redirect('/dashboard');
   }
 
-
-  redirect('/login');
-
+  return <Login />;
 };
 
-export default Page;
+export default LoginPage;
