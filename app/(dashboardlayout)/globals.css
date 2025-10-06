@@ -1,0 +1,107 @@
+:root {
+    /* Dashboard page  */
+    --dashboardpage-color: #1f2937;
+    --dashboardpage-heading-color: #2563eb;
+    --dashboardpage-text-color: #374151;
+    --dashboardpage-text-bg-color: #ffffff;
+    --dashboardpage-text-box-shadow: rgba(0, 0, 0, 0.08);
+
+    /* create task dialog  */
+    --taskdialogoverley-bg-color: rgba(0, 0, 0, 0.3);
+    --taskdialog-bg-color: #ffffff;
+    --taskdialog-shadowcolor: rgba(0, 0, 0, 0.25);
+    --taskdialog-heading-color: #1f2937;
+    --taskdialog-input-border-color: #d1d5db;
+    --taskdialog-input-border-text-color: #111827;
+    --taskdialog-input-bg-color: #f9fafb;
+    --taskdialog-input-focus-border-color: #2563eb;
+    --taskdialog-input-focus-bg-color: #ffffff;
+    --taskdialog-addbtn-bg-color: #2563eb;
+    --taskdialog-addbtn-text-color: #ffffff;
+    --taskdialog-addbtn-hover-color: #1d4ed8;
+    --taskdialog-addbtn-disabled-bg-color: #93c5fd;
+    --taskdialog-cancelbtn-bg-color: #f3f4f6;
+    --taskdialog-cancelbtn-text-color: #374151;
+    --taskdialog-cancelbtn-hover-bg-color: #e5e7eb;
+
+    /* secondary navbar  */
+
+    --navbarsecondary-listbtn-bg-color: #f1f1f1;
+    --navbarsecondary-listbtn-text-color: #111827;
+    --navbarsecondary-listbtn-border-color: #d1d5db;
+    --navbarsecondary-listbtn-border-shadow-color: rgba(0, 0, 0, 0.04);
+    --navbarsecondary-listbtn-hover-bg-color: #f9fafb;
+    --navbarsecondary-listbtn-hover-border-color: #93c5fd;
+    --navbarsecondary-listbtn-hover-text-color: #1d4ed8;
+    --navbarsecondary-calanderbtn-bg-color: #fef2f2;
+    --navbarsecondary-calanderbtn-text-color: #991b1b;
+    --navbarsecondary-calanderbtn-border-color: #fecaca;
+    --navbarsecondary-calanderbtn-border-shadow-color: rgba(0, 0, 0, 0.04);
+    --navbarsecondary-calanderbtn-hover-bg-color: #fee2e2;
+    --navbarsecondary-calanderbtn-hover-border-color: #fca5a5;
+    --navbarsecondary-calanderbtn-hover-text-color: #b91c1c;
+    --navbarsecondary-addbtn-bg-color: #2563eb;
+    --navbarsecondary-addbtn-text-color: #ffffff;
+    --navbarsecondary-addbtn-text-color-shadow: rgba(37, 99, 235, 0.25);
+    --navbarsecondary-addbtn-hover-bg-color: #1e40af;
+    --navbarsecondary-addbtn-hover-text-color-shadow: rgba(30, 64, 175, 0.35);
+    --navbarsecondary-dashboardbtn-bg-color: #1d4ed8;
+    --navbarsecondary-dashboardbtn-text-color: #ffffff;
+    --navbarsecondary-dashboardbtn-text-color-shadow: rgba(29, 78, 216, 0.3);
+    --navbarsecondary-dashboardbtn-hover-bg-color: #1e40af;
+    --navbarsecondary-dashboardbtn-hover-text-color-shadow: rgba(30, 64, 175, 0.35);
+
+    /* calander feature  */
+    --calanderfeature-bg-color: rgba(0, 0, 0, 0.3);
+    --calanderfeature-text-color: #ffffff;
+    --calanderfeature-event-bg-color: red;
+
+    /* todo list  */
+    --todolist-bg-color: #f9fafb;
+    --todolist-text-color: #111827;
+    --todolist-border-color: #d1d5db;
+    --todolist-input-focus-border-color: #3b82f6;
+    --todolist-input-focus-shadow-color: rgba(59, 130, 246, 0.2);
+    --todolist-addbtn-bg-color: #3b82f6;
+    --todoist-addbtn-text-color: white;
+    --todolist-addbtn-hover-bg-color: #2563eb;
+    --todo-list-taskitem-bg-color: #ffffff;
+    --todo-list-taskitem-border-color: #e5e7eb;
+    --todolist-taskitem-hover-bg-color: f3f4f6;
+    --todolist-taskitem-span-text-color: #111827;
+    --todolist-taskitem-span-completed-text-color: #ecfdf5;
+    --todolist-taskitem-completed-border-color: #10b981;
+    --todolist-taskitem-completed-span-text-color: #6b7280;
+    --todolist-taskitem-button-bg-color: #3b82f6;
+    --todolist-taskitembutton-text-color: #ffffff;
+    --todolist-taskitembutton-hover-bg-color: #2563eb;
+    --todolist-editbutton-bg-color: #fbbf24;
+    --todolist-editbutton-text-color: #111827;
+    --todolist-editbutton-hover-bg-color: #f59e0b;
+    --todolist-deletebutton-bg-color: #ef4444;
+    --todolist-deletebutton-text-color: #ffffff;
+    --todolist-deletebutton-hover-bg-color: #dc2626;
+    --todolist-dashboardbtn-bg-color: #10b981;
+    --todolist-dashboardbtn-text-color: #ffffff;
+    --todolist-dashboardbtn-hover-bg-color: #059669;
+    --todolist-updateform-overley-bg-color: rgba(0, 0, 0, 0.45);
+    --todolist-updateform-bg-color: #ffffff;
+    --todolist-updateform-shadow-color: rgba(2, 6, 23, 0.12);
+    --todolistinput-border-color: #d1d5db;
+    --todolistinput-bgcolor: #f9fafb;
+    --todolistinput-placeholder-color: #9ca3af;
+    --todolistinput-placeholder-focus-color: #3b82f6;
+    --todolistinput-focus-bgcolor: #fff;
+    --todolistinput-focus-shadow-color: rgba(59, 130, 246, 0.10);
+    --todolistformbutton-bg-color: #3b82f6;
+    --todolistformbutton-text-color: #ffffff;
+    --todolistformbutton-hover-bg-color: #2563eb;
+    --todolistform-cancelbtn-bg-color: #f3f4f6;
+    --todolistform-cancelbtn-text-color: #374151;
+    --todolistform-cancelbtn-hover-bg-color: #e5e7eb;
+
+
+
+
+
+}

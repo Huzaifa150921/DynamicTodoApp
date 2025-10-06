@@ -1,0 +1,350 @@
+.todo {
+    width: 100%;
+    max-width: 100%;
+    background-color: var(--todolist-bg-color);
+    color: var(--todolist-text-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 1rem;
+    padding: 1.5rem 2rem;
+    border-radius: 0;
+    box-shadow: none;
+    transition: all 0.3s ease;
+    height: 77vh;
+}
+
+.todo form {
+    display: flex;
+    gap: 0.5rem;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.todo_input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--todolist-border-color);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.2s, box-shadow 0.2s;
+    width: 100%;
+}
+
+.todo_input:focus {
+    border-color: var(--todolist-input-focus-border-color);
+    box-shadow: 0 0 0 2px var(--todolist-input-focus-shadow-color);
+}
+
+.todo_add_button {
+    padding: 0.7rem 1.2rem;
+    background-color: var(--todolist-addbtn-bg-color);
+    color: var(--todoist-addbtn-text-color);
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.todo_add_button:hover {
+    background-color: var(--todolist-addbtn-hover-bg-color);
+}
+
+.todo_task_list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-top: 1rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 60vh;
+    width: 100%;
+    padding-right: 0.5rem;
+}
+
+.todo_task_item {
+    padding: 0.75rem 1rem;
+    border-radius: 0.6rem;
+    background-color: var(--todo-list-taskitem-bg-color);
+    border: 1px solid var(--todo-list-taskitem-border-color);
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    transition: all 0.2s;
+    width: 100%;
+}
+
+.todo_task_item:hover {
+    background-color: var(--todolist-taskitem-hover-bg-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.todo_task_item span {
+    color: var(--todolist-taskitem-span-text-color);
+    font-weight: 500;
+}
+
+.todo_completed_task {
+    background-color: var(--todolist-taskitem-span-completed-text-color);
+    border: 1px solid var(--todolist-taskitem-completed-border-color);
+}
+
+.todo_completed_task span {
+    text-decoration: line-through;
+    color: var(--todolist-taskitem-completed-span-text-color);
+}
+
+.todo_task_actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.todo_complete_button,
+.todo_edit_button,
+.todo_delete_button {
+    padding: 0.4rem 0.8rem;
+    border: none;
+    border-radius: 0.4rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.todo_complete_button {
+    background-color: var(--todolist-taskitem-button-bg-color);
+    color: var(--todolist-taskitembutton-text-color);
+}
+
+.todo_complete_button:hover {
+    background-color: var(--todolist-taskitembutton-hover-bg-color);
+}
+
+.todo_edit_button {
+    background-color: var(--todolist-editbutton-bg-color);
+    color: var(--todolist-editbutton-text-color);
+}
+
+.todo_edit_button:hover {
+    background-color: var(--todolist-editbutton-hover-bg-color);
+}
+
+.todo_delete_button {
+    background-color: var(--todolist-deletebutton-bg-color);
+    color: var(--todolist-deletebutton-text-color);
+}
+
+.todo_delete_button:hover {
+    background-color: var(--todolist-deletebutton-hover-bg-color);
+}
+
+.todo_loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.todo_empty {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.todo_dashboardbtn {
+    margin-top: 1rem;
+    padding: 0.75rem 1rem;
+    background-color: var(--todolist-dashboardbtn-bg-color);
+    color: var(--todolist-dashboardbtn-text-color);
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.2s;
+    width: 100%;
+    text-align: center;
+}
+
+.todo_dashboardbtn:hover {
+    background-color: var(--todolist-dashboardbtn-hover-bg-color);
+}
+
+.todo_updateform_overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--todolist-updateform-overley-bg-color);
+    z-index: 1000;
+    padding: 1.25rem;
+}
+
+.todo_updateform {
+    width: 100%;
+    max-width: 480px;
+    background: var(--todolist-updateform-bg-color);
+    border-radius: 0.6rem;
+    padding: 1rem 1.25rem;
+    box-shadow: 0 10px 30px var(--todolist-updateform-shadow-color);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    animation: todo-form-entrance 160ms ease-out;
+}
+
+@keyframes todo-form-entrance {
+    from {
+        opacity: 0;
+        transform: translateY(-8px) scale(0.995);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.todo_updateforminput {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--todolistinput-border-color);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.15s, box-shadow 0.15s, background 0.15s;
+    background: var(--todolistinput-bgcolor);
+}
+
+.todo_updateforminput::placeholder {
+    color: var(--todolistinput-placeholder-color);
+}
+
+.todo_updateforminput:focus {
+    border-color: var(--todolistinput-placeholder-focus-color);
+    background: var(--todolistinput-focus-bgcolor);
+    box-shadow: 0 0 0 3px var(--todolistinput-focus-shadow-color);
+}
+
+.todo_updateform_actions {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+    margin-top: 0.25rem;
+}
+
+.todo_updateformbutton {
+    padding: 0.6rem 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    background: var(--todolistformbutton-bg-color);
+    color: var(--todolistformbutton-text-color);
+    transition: background 0.15s, transform 0.08s;
+}
+
+.todo_updateformbutton:hover {
+    background: var(--todolistformbutton-hover-bg-color);
+}
+
+.todo_updateformbutton:active {
+    transform: translateY(1px);
+}
+
+.todo_cancel_button {
+    padding: 0.55rem 0.9rem;
+    border-radius: 0.5rem;
+    border: none;
+    background: var(--todolistform-cancelbtn-bg-color);
+    color: var(--todolistform-cancelbtn-text-color);
+    cursor: pointer;
+    transition: background 0.15s, transform 0.08s;
+}
+
+.todo_cancel_button:hover {
+    background: var(--todolistform-cancelbtn-hover-bg-color);
+}
+
+.todo_cancel_button:active {
+    transform: translateY(1px);
+}
+
+.todo_updateformbutton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+@media (max-width: 1024px) {
+    .todo {
+        padding: 1.25rem 1.5rem;
+        height: auto;
+        min-height: 70vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .todo {
+        padding: 1rem;
+        height: auto;
+    }
+
+    .todo_task_item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .todo_add_button {
+        width: 100%;
+    }
+
+    .todo_task_actions {
+        width: 100%;
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .todo {
+        padding: 0.75rem;
+    }
+
+    .todo_input {
+        font-size: 0.9rem;
+        padding: 0.6rem 0.9rem;
+    }
+
+    .todo_add_button {
+        font-size: 0.9rem;
+        padding: 0.6rem 0.9rem;
+    }
+
+    .todo_task_item {
+        font-size: 0.9rem;
+        padding: 0.6rem 0.75rem;
+    }
+
+    .todo_updateform {
+        max-width: 100%;
+        padding: 0.85rem;
+    }
+
+    .todo_updateform_actions {
+        flex-direction: column-reverse;
+        gap: 0.5rem;
+    }
+
+    .todo_updateformbutton,
+    .todo_cancel_button {
+        width: 100%;
+    }
+}

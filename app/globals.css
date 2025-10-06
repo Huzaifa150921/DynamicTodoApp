@@ -22,30 +22,5 @@
     --loginheading-color: white;
     --logincontent-color: rgb(219, 219, 219);
 
-    /* Dashboard */
-    --dashboard-bgcolor: rgb(130, 130, 255);
-    --dashboard-color: #222222;
-    --dashboardshadow-color: rgba(0, 0, 0, 0.08);
-    --dashboardinput-bordercolor: #d1d5db;
-    --dashboardinput-focusbordercolor: #6366f1;
-    --dashboardinput-focusboxshadowcolor: rgba(99, 102, 241, 0.2);
-    --taskitem-bgcolor: #ffb9b9;
-    --taskitem-bordercolor: #ff0404;
-    --taskitem-hoverbgcolor: #f3f4f6;
-    --addbutton-bgcolor: #6366f1;
-    --addbutton-color: white;
-    --addbutton-hoverbgcolor: #4f46e5;
-    --editbutton-bgcolor: #fbbf24;
-    --editbutton-color: white;
-    --editbutton-hoverbgcolor: #f59e0b;
-    --deletebutton-bgcolor: #ef4444;
-    --deletebutton-color: white;
-    --deletebutton-hoverbgcolor: #dc2626;
-    --dashboardupdateform-overlaybgcolor: rgba(0, 0, 0, 0.4);
-    --dashboardupdateformshadow-color: rgba(0, 0, 0, 0.25);
-    --dashboardcompletedtask-bgcolor: #d1fae5;
-    --dashboardcompletedtask-bordercolor: #10b981;
-    --dashboardcompletebutton-bgcolor: #28a745;
-    --dashboardcompletebutton-color: white;
-    --dashboardcompletebutton-hoverbgcolor: #218838;
+
 }

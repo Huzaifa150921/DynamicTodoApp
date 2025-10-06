@@ -1,0 +1,102 @@
+.navbarsecondary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    width: 100%;
+    padding: 1.5rem;
+    position: relative;
+}
+
+.navbarsecondary_btnflexprimary {
+    display: flex;
+    gap: 1rem;
+}
+
+.navbarsecondary_btnflexsecondary {
+    display: flex;
+    gap: 1rem;
+}
+
+.navbarsecondary button {
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 0.6rem;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.25s ease;
+}
+
+.navbarsecondary_listbtn {
+    background-color: var(--navbarsecondary-listbtn-bg-color);
+    color: var(--navbarsecondary-listbtn-text-color);
+    border: 1px solid var(--navbarsecondary-listbtn-border-color);
+    box-shadow: 0 2px 4px var(--navbarsecondary-listbtn-border-shadow-color);
+}
+
+.navbarsecondary_listbtn:hover {
+    background-color: var(--navbarsecondary-listbtn-hover-bg-color);
+    border-color: var(--navbarsecondary-listbtn-hover-border-color);
+    color: var(--navbarsecondary-listbtn-hover-text-color);
+}
+
+.navbarsecondary_calanderbtn {
+    background-color: var(--navbarsecondary-calanderbtn-bg-color);
+    color: var(--navbarsecondary-calanderbtn-text-color);
+    border: 1px solid var(--navbarsecondary-calanderbtn-border-color);
+    box-shadow: 0 2px 4px var(--navbarsecondary-calanderbtn-border-shadow-color);
+}
+
+.navbarsecondary_calanderbtn:hover {
+    background-color: var(--navbarsecondary-calanderbtn-hover-bg-color);
+    border-color: var(--navbarsecondary-calanderbtn-hover-border-color);
+    color: var(--navbarsecondary-calanderbtn-hover-text-color);
+}
+
+.navbarsecondary_addbtn {
+    background-color: var(--navbarsecondary-addbtn-bg-color);
+    color: var(--navbarsecondary-addbtn-text-color);
+    font-weight: 600;
+    box-shadow: 0 3px 8px var(--navbarsecondary-addbtn-text-color-shadow);
+}
+
+.navbarsecondary_addbtn:hover {
+    background-color: var(--navbarsecondary-addbtn-hover-bg-color);
+    box-shadow: 0 5px 12px var(--navbarsecondary-addbtn-hover-text-color-shadow);
+    transform: translateY(-1px);
+}
+
+.navbarsecondary_dashboardbtn {
+    background-color: var(--navbarsecondary-dashboardbtn-bg-color);
+    color: var(--navbarsecondary-dashboardbtn-text-color);
+    box-shadow: 0 3px 8px var(--navbarsecondary-dashboardbtn-text-color-shadow);
+}
+
+.navbarsecondary_dashboardbtn:hover {
+    background-color: var(--navbarsecondary-dashboardbtn-hover-bg-color);
+    box-shadow: 0 5px 12px var(--navbarsecondary-dashboardbtn-hover-text-color-shadow);
+    transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+    .navbarsecondary {
+        flex-direction: column;
+        height: auto;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .navbarsecondary_btnflexprimary,
+    .navbarsecondary_btnflexsecondary {
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        gap: 0.75rem;
+    }
+
+    .navbarsecondary button {
+        width: 100%;
+        max-width: 300px;
+    }
+}

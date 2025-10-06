@@ -57,6 +57,8 @@ export async function PUT(
         where: { id: taskId },
         data: {
             title: body.title ?? task.title,
+            duedate: body.duedate ?? task.duedate,
+            description: body.description ?? task.description,
             completed: body.completed ?? task.completed,
         },
     });

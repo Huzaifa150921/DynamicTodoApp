@@ -1,0 +1,159 @@
+.dialog_overlay {
+    position: fixed;
+    inset: 0;
+    background-color: var(--taskdialogoverley-bg-color);
+    backdrop-filter: blur(2px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9;
+}
+
+.addtask_dialog {
+    height: auto;
+    min-height: 40vh;
+    background-color: var(--taskdialog-bg-color);
+    width: 90%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    gap: 1rem;
+    box-shadow: 0 4px 12px var(--taskdialog-shadowcolor);
+    z-index: 10;
+    position: relative;
+}
+
+.dialog_heading {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--taskdialog-heading-color);
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.dialog_form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+
+.dialog_input,
+.dialog_date,
+.dialog_textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--taskdialog-input-border-color);
+    border-radius: 0.375rem;
+    font-size: 0.95rem;
+    color: var(--taskdialog-input-border-text-color);
+    background-color: var(--taskdialog-input-bg-color);
+    outline: none;
+    transition: border 0.2s ease-in-out;
+}
+
+.dialog_input:focus,
+.dialog_date:focus,
+.dialog_textarea:focus {
+    border-color: var(--taskdialog-input-focus-border-color);
+    background-color: var(--taskdialog-input-focus-bg-color);
+}
+
+.dialog_textarea {
+    resize: none;
+    height: 80px;
+}
+
+.dialog_btnflex {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.dialog_addbtn {
+    background-color: var(--taskdialog-addbtn-bg-color);
+    color: var(--taskdialog-addbtn-text-color);
+    font-weight: 600;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.dialog_addbtn:hover {
+    background-color: var(--taskdialog-addbtn-hover-color);
+}
+
+.dialog_addbtn:disabled {
+    background-color: var(--taskdialog-addbtn-disabled-bg-color);
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.dialog_cancelbtn {
+    background-color: var(--taskdialog-cancelbtn-bg-color);
+    color: var(--taskdialog-cancelbtn-text-color);
+    font-weight: 500;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.dialog_cancelbtn:hover {
+    background-color: var(--taskdialog-cancelbtn-hover-bg-color);
+}
+
+@media (max-width: 768px) {
+    .addtask_dialog {
+        width: 95%;
+        max-width: 350px;
+        padding: 1rem;
+    }
+
+    .dialog_heading {
+        font-size: 1.1rem;
+    }
+
+    .dialog_input,
+    .dialog_date,
+    .dialog_textarea {
+        font-size: 0.9rem;
+        padding: 0.6rem;
+    }
+
+    .dialog_btnflex {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .dialog_addbtn,
+    .dialog_cancelbtn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .addtask_dialog {
+        width: 100%;
+        max-width: 300px;
+        padding: 0.8rem;
+        border-radius: 0.4rem;
+    }
+
+    .dialog_heading {
+        font-size: 1rem;
+    }
+
+    .dialog_textarea {
+        height: 70px;
+    }
+}

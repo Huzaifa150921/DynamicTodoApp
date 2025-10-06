@@ -1,0 +1,168 @@
+.scrollableCalendar {
+    height: 77vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.scrollableCalendar :global(.rbc-month-row) {
+    overflow: visible !important;
+}
+
+.scrollableCalendar :global(.rbc-month-row .rbc-date-cell) {
+    vertical-align: top;
+    height: auto;
+    position: relative;
+}
+
+.scrollableCalendar :global(.rbc-month-row .rbc-row-bg) {
+    overflow: visible !important;
+}
+
+.scrollableCalendar :global(.rbc-month-row .rbc-row-segment) {
+    display: block !important;
+}
+
+.scrollableCalendar :global(.rbc-month-row .rbc-events-container),
+.scrollableCalendar :global(.rbc-month-row .rbc-events) {
+    max-height: 90px;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    display: block !important;
+    position: relative;
+    z-index: 3;
+    scrollbar-width: thin;
+}
+
+.scrollableCalendar :global(.rbc-month-row .rbc-events-container::-webkit-scrollbar) {
+    width: 5px;
+}
+
+.scrollableCalendar :global(.rbc-month-row .rbc-events-container::-webkit-scrollbar-thumb) {
+    background-color: var(--calanderfeature-bg-color);
+    border-radius: 3px;
+}
+
+.scrollableCalendar :global(.rbc-event) {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin-bottom: 3px;
+    cursor: pointer;
+    padding: 0 !important;
+}
+
+.scrollableCalendar :global(.rbc-event-content) {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.calanderfeatures {
+    color: var(--calanderfeature-text-color);
+    padding: 4px;
+    border-radius: 4px;
+    position: relative;
+    z-index: 5;
+    overflow: hidden;
+    font-size: 0.9rem;
+}
+
+.calanderfeature_description {
+    font-size: 12px;
+    font-style: italic;
+}
+
+.calanderfeature_date {
+    font-size: 10px;
+    margin-top: 2px;
+}
+
+.scrollableCalendar :global(.rbc-date-cell.rbc-selected),
+.scrollableCalendar :global(.rbc-selected-cell) {
+    background-color: var(--calanderfeature-event-bg-color) !important;
+    background-image: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    position: relative;
+    z-index: 1;
+}
+
+.scrollableCalendar :global(.rbc-event:focus),
+.scrollableCalendar :global(.rbc-event:hover) {
+    outline: none !important;
+}
+
+.scrollableCalendar :global(.rbc-slot-selection),
+.scrollableCalendar :global(.rbc-slot-selection::before),
+.scrollableCalendar :global(.rbc-slot-selection::after) {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.scrollableCalendar :global(.rbc-selected-cell::before),
+.scrollableCalendar :global(.rbc-selected-cell::after) {
+    background: transparent !important;
+    background-image: none !important;
+}
+
+@media (max-width: 1024px) {
+    .scrollableCalendar {
+        height: 70vh;
+    }
+
+    .scrollableCalendar :global(.rbc-month-view) {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .scrollableCalendar {
+        height: 65vh;
+    }
+
+    .calanderfeatures {
+        font-size: 0.8rem;
+        padding: 3px;
+    }
+
+    .calanderfeature_description {
+        font-size: 11px;
+    }
+
+    .calanderfeature_date {
+        font-size: 9px;
+    }
+
+    .scrollableCalendar :global(.rbc-header) {
+        font-size: 0.85rem !important;
+        padding: 2px;
+    }
+}
+
+@media (max-width: 480px) {
+    .scrollableCalendar {
+        height: 60vh;
+    }
+
+    .scrollableCalendar :global(.rbc-toolbar-label) {
+        font-size: 0.9rem !important;
+    }
+
+    .scrollableCalendar :global(.rbc-month-row .rbc-events-container) {
+        max-height: 70px;
+    }
+
+    .calanderfeatures {
+        font-size: 0.75rem;
+        padding: 2px;
+    }
+
+    .calanderfeature_description {
+        font-size: 10px;
+    }
+
+    .calanderfeature_date {
+        font-size: 8px;
+    }
+}
