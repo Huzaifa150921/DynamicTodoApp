@@ -18,9 +18,8 @@ export default async function DashboardPage() {
             <p className={styles.dashboardpage_text}>
                 This is your personal dashboard where you can manage your tasks efficiently.
                 Keep track of your to-do items, mark tasks as completed, and stay organized
-                throughout your day. Explore the tasks and see what's next on your agenda!
+                throughout your day. Explore the tasks and see what&apos;s next on your agenda!
             </p>
-
         </div>
     );
 }

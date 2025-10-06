@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react'
 import moment from "moment";
 import TodoCalander from '@/app/(dashboardlayout)/components/todocalander/TodoCalander'
 import CreateTaskDialog from '@/app/(dashboardlayout)/components/createtaskdialog/CreateTaskDialog';
+import { EventProps, SlotInfo } from 'react-big-calendar'
 
 type Task = {
   id: string;
@@ -13,13 +14,23 @@ type Task = {
   duedate?: string;
 };
 
+
+type CalendarEvent = {
+  start: Date;
+  end: Date;
+  title: string;
+  description?: string;
+  completed: boolean;
+  id: string;
+  data?: { type: string };
+};
+
 const CalanderFeatures = () => {
   const [tasks, setTasks] = useState<Task[]>([]);
-  const [showDialog, setShowDialog] = useState<boolean>(false);
-  const [selectedDate, setSelectedDate] = useState<string>("");
+  const [showDialog, setShowDialog] = useState(false);
+  const [selectedDate, setSelectedDate] = useState("");
 
   async function fetchTasks() {
-
     try {
       const res = await fetch("/api/tasks", { cache: "reload" });
       if (res.ok) {
@@ -28,14 +39,12 @@ const CalanderFeatures = () => {
       }
     } catch (err) {
       console.error(err);
-    } finally {
-
     }
   }
 
   useEffect(() => { fetchTasks(); }, []);
 
-  const events = tasks
+  const events: CalendarEvent[] = tasks
     .filter(task => task.duedate)
     .map(task => ({
       start: moment(task.duedate).toDate(),
@@ -47,9 +56,9 @@ const CalanderFeatures = () => {
       data: { type: "Task" }
     }));
 
+
   const components = {
-    event: (props: any) => {
-      const { event } = props;
+    event: ({ event }: EventProps<CalendarEvent>) => {
       const date = moment(event.start).format("MMM DD, YYYY");
       const bgColor = event.completed ? "green" : "red";
 
@@ -65,7 +74,8 @@ const CalanderFeatures = () => {
     },
   };
 
-  const handleSlotSelect = (slotInfo: any) => {
+
+  const handleSlotSelect = (slotInfo: SlotInfo) => {
     const clickedDate = moment(slotInfo.start).format("YYYY-MM-DD");
     setSelectedDate(clickedDate);
     setShowDialog(true);
