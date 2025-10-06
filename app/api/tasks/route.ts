@@ -27,7 +27,7 @@ export async function POST(req: NextRequest) {
     const task = await prisma.task.create({
         data: {
             title: body.title,
-            duedate: body.duedate,
+            duedate: body.duedate ? new Date(body.duedate) : new Date(),
             description: body.description,
             userId: user.id,
         },

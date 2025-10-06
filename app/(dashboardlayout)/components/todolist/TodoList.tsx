@@ -49,7 +49,7 @@ export default function TodoList() {
         e.preventDefault();
         if (!updateTitle.trim() || !currentTaskId) return;
 
-        // Convert YYYY-MM-DD back to ISO string for backend
+
         const dueDateISO = updateDueDate ? new Date(updateDueDate).toISOString() : undefined;
 
         const res = await fetch(`/api/tasks/${currentTaskId}`, {
