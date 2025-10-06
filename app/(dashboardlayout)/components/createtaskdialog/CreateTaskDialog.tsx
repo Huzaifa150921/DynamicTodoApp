@@ -18,11 +18,12 @@ const CreateTaskDialog = ({ showDialog, setShowDialog, date, onTaskAdded }: Crea
     async function handleAddTask(e: React.FormEvent) {
         e.preventDefault();
         if (!title.trim() || !(date || dateState)) return;
+        const dueDateISO = new Date(dateState || date!).toISOString();
         const res = await fetch("/api/tasks", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(
-                { title, completed: false, duedate: dateState || date, description }),
+                { title, completed: false, duedate: dueDateISO, description }),
         });
         if (res.ok) {
             notifySuccess("Task added successfully");
