@@ -2,7 +2,10 @@
     height: 77vh;
     width: 100%;
     overflow: hidden;
+
 }
+
+
 
 .scrollableCalendar :global(.rbc-month-row) {
     overflow: visible !important;
@@ -65,6 +68,7 @@
     z-index: 5;
     overflow: hidden;
     font-size: 0.9rem;
+    user-select: text;
 }
 
 .calanderfeature_description {
@@ -95,7 +99,7 @@
 .scrollableCalendar :global(.rbc-slot-selection),
 .scrollableCalendar :global(.rbc-slot-selection::before),
 .scrollableCalendar :global(.rbc-slot-selection::after) {
-    background-color: transparent !important;
+    background-color: inherit !important;
     border: none !important;
     box-shadow: none !important;
 }

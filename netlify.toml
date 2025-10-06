@@ -1,0 +1,7 @@
+[functions]
+  directory = "netlify/functions"
+
+[[functions.schedule]]
+  function = "sendReminders"
+  schedule = "12 19 * * *" # Every day at 17:59 UTC
+  enabled = true

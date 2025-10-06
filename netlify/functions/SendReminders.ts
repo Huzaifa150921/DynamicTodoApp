@@ -1,56 +1,53 @@
-// work only in local server not deployment
-
-import cron from "node-cron";
-import { prisma } from "./Prisma";
+import { Handler } from "@netlify/functions";
+import { prisma } from "@/app/lib/Prisma";
 import nodemailer from "nodemailer";
 
-
 async function sendEmail(to: string, subject: string, html: string) {
-  const transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
-    port: 465,
-    secure: true,
-    auth: {
-      user: process.env.SMTP_USER,
-      pass: process.env.SMTP_PASS,
-    },
-  });
+    const transporter = nodemailer.createTransport({
+        host: "smtp.gmail.com",
+        port: 465,
+        secure: true,
+        auth: {
+            user: process.env.SMTP_USER,
+            pass: process.env.SMTP_PASS,
+        },
+    });
 
-  await transporter.sendMail({
-    from: `"Todo App" <${process.env.SMTP_USER}>`,
-    to,
-    subject,
-    html,
-  });
+    await transporter.sendMail({
+        from: `"Todo App" <${process.env.SMTP_USER}>`,
+        to,
+        subject,
+        html,
+    });
 }
 
 async function sendTaskReminders() {
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
-  const tomorrow = new Date(today);
-  tomorrow.setDate(today.getDate() + 1);
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const tomorrow = new Date(today);
+    tomorrow.setDate(today.getDate() + 1);
 
-  const users = await prisma.user.findMany({
-    include: {
-      Task: {
-        where: { completed: false, duedate: { gte: today, lt: tomorrow } },
-      },
-    },
-  });
+    const users = await prisma.user.findMany({
+        include: {
+            Task: {
+                where: { completed: false, duedate: { gte: today, lt: tomorrow } },
+            },
+        },
+    });
 
-  for (const user of users) {
-    if (!user.email || user.Task.length === 0) continue;
+    for (const user of users) {
+        if (!user.email || user.Task.length === 0) continue;
 
-    const tasksList = user.Task.map(
-      (t) =>
-        `<tr>
+        const tasksList = user.Task.map(
+            (t) =>
+                `<tr>
             <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>${t.title}</strong></td>
             <td style="padding: 8px; border-bottom: 1px solid #ddd;">${t.description || "-"}</td>
             <td style="padding: 8px; border-bottom: 1px solid #ddd;">${t.duedate.toDateString()}</td>
           </tr>`
-    ).join("");
+        ).join("");
 
-    const htmlContent = `
+        const htmlContent = `
         <div style="font-family: Arial, sans-serif; font-size: 14px; padding: 20px; background-color: #f9f9f9;">
           <h3>Hello ${user.name || "User"},</h3>
           <p>You have the following incomplete tasks for today:</p>
@@ -72,12 +69,16 @@ async function sendTaskReminders() {
         </div>
       `;
 
-    await sendEmail(user.email, "Todo App - Tasks Due Today", htmlContent);
-  }
+        await sendEmail(user.email, "Todo App - Tasks Due Today", htmlContent);
+    }
 }
 
-
-cron.schedule("6 19 * * *", () => {
-  console.log("Running daily task reminder job...");
-  sendTaskReminders();
-});
+export const handler: Handler = async () => {
+    try {
+        await sendTaskReminders();
+        return { statusCode: 200, body: "Task reminders sent successfully" };
+    } catch (err) {
+        console.error(err);
+        return { statusCode: 500, body: "Error sending task reminders" };
+    }
+};
