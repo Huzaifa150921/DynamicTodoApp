@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styles from './createtaskdialog.module.css'
-import { notifyError, notifySuccess } from '@/app/components/uielements/toast/Notifier';
+import { notifySuccess } from '@/app/components/uielements/toast/Notifier';
 
 type CreateTaskDialogProps = {
     showDialog: boolean
@@ -40,7 +40,7 @@ const CreateTaskDialog = ({ showDialog, setShowDialog, date, onTaskAdded }: Crea
         setDate("");
         setDescription("");
         setShowDialog(false);
-        notifyError("Task not added");
+
     }
 
     return (

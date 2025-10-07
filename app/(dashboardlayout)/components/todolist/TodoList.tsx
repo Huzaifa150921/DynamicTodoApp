@@ -1,8 +1,11 @@
 'use client';
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import styles from "./todo.module.css";
-import { notifySuccess, notifyError } from "@/app/components/uielements/toast/Notifier";
-
+import { notifySuccess } from "@/app/components/uielements/toast/Notifier";
+import { FaRegEdit } from "react-icons/fa";
+import { MdDelete } from "react-icons/md";
+import { IoIosCheckmarkCircleOutline } from "react-icons/io";
+import Shimmer from "@/app/(dashboardlayout)/components/shimmerscreen/ShimmerScreen";
 type Task = {
     id: string;
     title: string;
@@ -98,7 +101,6 @@ export default function TodoList() {
     }
 
     function closeForm() {
-        notifyError("Update cancelled");
         setUpdateForm(false);
         setUpdateTitle("");
         setUpdateDescription("");
@@ -109,25 +111,28 @@ export default function TodoList() {
     return (
         <div className={styles.todo}>
             {loading ? (
-                <p className={styles.todo_loading}>Loading tasks...</p>
+
+                <Shimmer />
             ) : tasks.length ? (
                 <div className={styles.todo_task_list}>
                     {tasks.map(task => (
                         <div key={task.id} className={`${styles.todo_task_item} ${task.completed ? styles.todo_completed_task : ""}`}>
-                            <div style={{ display: "flex", flexDirection: "column", gap: "0.25rem" }}>
-                                <div><strong>Title:</strong> {task.title}</div>
-                                {task.duedate && <div><strong>Due Date:</strong> {task.duedate.split("T")[0]}</div>}
-                                {task.description && <div><strong>Description:</strong> {task.description}</div>}
+                            <div className={styles.todo_task_labels}>
+                                <div className={styles.todo_title}><strong>Title:</strong> {task.title}</div>
+                                {task.duedate && <div className={styles.todo_date}><strong>Due Date:</strong> {task.duedate.split("T")[0]}</div>}
+                                {task.description && <div className={styles.todo_description}><strong>Description:</strong> {task.description}</div>}
                             </div>
                             <div className={styles.todo_task_actions}>
-                                <button
-                                    className={styles.todo_complete_button}
-                                    onClick={() => handleToggleComplete(task.id, task.completed)}
-                                >
-                                    {task.completed ? "Completed" : "Todo"}
-                                </button>
-                                <button className={styles.todo_edit_button} onClick={() => showForm(task)}>Edit</button>
-                                <button className={styles.todo_delete_button} onClick={() => handleDeleteTask(task.id)}>Delete</button>
+
+                                {task.completed ?
+                                    <IoIosCheckmarkCircleOutline className={styles.todo_completed_button} onClick={() => handleToggleComplete(task.id, task.completed)} size={50} color="green" /> :
+                                    <IoIosCheckmarkCircleOutline className={styles.todo_complete_button} onClick={() => handleToggleComplete(task.id, task.completed)} size={50} />
+
+                                }
+
+                                <FaRegEdit className={styles.todo_edit_button} onClick={() => showForm(task)} size={50} />
+
+                                <MdDelete className={styles.todo_delete_button} onClick={() => handleDeleteTask(task.id)} size={50} />
                             </div>
                         </div>
                     ))}

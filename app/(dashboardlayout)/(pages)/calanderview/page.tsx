@@ -1,4 +1,3 @@
-import React from 'react'
 import styles from './calanderview.module.css'
 import CalanderFeatures from '../../components/todocalander/calanderfeatures/CalanderFeatures'
 import { auth } from '@/app/lib/Auth'

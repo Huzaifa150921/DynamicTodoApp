@@ -77,7 +77,7 @@ async function sendTaskReminders() {
 }
 
 
-cron.schedule("6 19 * * *", () => {
+cron.schedule("48 12 * * *", () => {
   console.log("Running daily task reminder job...");
   sendTaskReminders();
 });

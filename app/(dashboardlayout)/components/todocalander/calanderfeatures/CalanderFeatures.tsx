@@ -1,6 +1,6 @@
 'use client'
 import styles from './calanderfeature.module.css'
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import moment from "moment";
 import TodoCalander from '@/app/(dashboardlayout)/components/todocalander/TodoCalander'
 import CreateTaskDialog from '@/app/(dashboardlayout)/components/createtaskdialog/CreateTaskDialog';
@@ -53,6 +53,7 @@ const CalanderFeatures = () => {
       description: task.description || "",
       completed: task.completed,
       id: task.id,
+      allDay: true,
       data: { type: "Task" }
     }));
 
@@ -60,7 +61,7 @@ const CalanderFeatures = () => {
   const components = {
     event: ({ event }: EventProps<CalendarEvent>) => {
       const date = moment(event.start).format("MMM DD, YYYY");
-      const bgColor = event.completed ? "green" : "red";
+      const bgColor = event.completed ? "#29b100d2" : "#db0000cc";
 
       return (
         <div className={styles.calanderfeatures} style={{ backgroundColor: bgColor }}>

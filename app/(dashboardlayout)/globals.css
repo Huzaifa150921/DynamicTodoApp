@@ -75,6 +75,8 @@
     --todolist-taskitem-button-bg-color: #3b82f6;
     --todolist-taskitembutton-text-color: #ffffff;
     --todolist-taskitembutton-hover-bg-color: #2563eb;
+    --todolist-taskitemcompleted-button-bg-color: rgb(132, 255, 132);
+    --todolist-taskitemcompleted-button-bg-color-hover: rgb(93, 255, 93);
     --todolist-editbutton-bg-color: #fbbf24;
     --todolist-editbutton-text-color: #111827;
     --todolist-editbutton-hover-bg-color: #f59e0b;

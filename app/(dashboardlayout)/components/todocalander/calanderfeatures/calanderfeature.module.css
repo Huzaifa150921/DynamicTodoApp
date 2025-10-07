@@ -36,14 +36,6 @@
     scrollbar-width: thin;
 }
 
-.scrollableCalendar :global(.rbc-month-row .rbc-events-container::-webkit-scrollbar) {
-    width: 5px;
-}
-
-.scrollableCalendar :global(.rbc-month-row .rbc-events-container::-webkit-scrollbar-thumb) {
-    background-color: var(--calanderfeature-bg-color);
-    border-radius: 3px;
-}
 
 .scrollableCalendar :global(.rbc-event) {
     background: transparent !important;
@@ -81,34 +73,10 @@
     margin-top: 2px;
 }
 
-.scrollableCalendar :global(.rbc-date-cell.rbc-selected),
-.scrollableCalendar :global(.rbc-selected-cell) {
-    background-color: var(--calanderfeature-event-bg-color) !important;
-    background-image: none !important;
-    border: none !important;
-    box-shadow: none !important;
-    position: relative;
-    z-index: 1;
+.scrollableCalendar :global(.rbc-event-label) {
+    display: none !important;
 }
 
-.scrollableCalendar :global(.rbc-event:focus),
-.scrollableCalendar :global(.rbc-event:hover) {
-    outline: none !important;
-}
-
-.scrollableCalendar :global(.rbc-slot-selection),
-.scrollableCalendar :global(.rbc-slot-selection::before),
-.scrollableCalendar :global(.rbc-slot-selection::after) {
-    background-color: inherit !important;
-    border: none !important;
-    box-shadow: none !important;
-}
-
-.scrollableCalendar :global(.rbc-selected-cell::before),
-.scrollableCalendar :global(.rbc-selected-cell::after) {
-    background: transparent !important;
-    background-image: none !important;
-}
 
 @media (max-width: 1024px) {
     .scrollableCalendar {

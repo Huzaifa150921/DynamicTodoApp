@@ -1,4 +1,3 @@
-import React from 'react'
 import TodoList from '@/app/(dashboardlayout)/components/todolist/TodoList'
 import { auth } from "@/app/lib/Auth";
 import { redirect } from "next/navigation";

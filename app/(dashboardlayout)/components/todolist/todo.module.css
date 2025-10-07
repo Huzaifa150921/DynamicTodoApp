@@ -75,10 +75,19 @@
     font-size: 1rem;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     flex-wrap: wrap;
     transition: all 0.2s;
     width: 100%;
+}
+
+.todo_task_labels {
+    display: flex;
+    flex-Direction: column;
+    gap: 0.25rem;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    max-width: 700px;
 }
 
 .todo_task_item:hover {
@@ -96,6 +105,8 @@
     border: 1px solid var(--todolist-taskitem-completed-border-color);
 }
 
+
+
 .todo_completed_task span {
     text-decoration: line-through;
     color: var(--todolist-taskitem-completed-span-text-color);
@@ -105,9 +116,11 @@
     display: flex;
     gap: 0.5rem;
     flex-wrap: wrap;
+
 }
 
 .todo_complete_button,
+.todo_completed_button,
 .todo_edit_button,
 .todo_delete_button {
     padding: 0.4rem 0.8rem;
@@ -121,6 +134,14 @@
 .todo_complete_button {
     background-color: var(--todolist-taskitem-button-bg-color);
     color: var(--todolist-taskitembutton-text-color);
+}
+
+.todo_completed_button {
+    background-color: var(--todolist-taskitemcompleted-button-bg-color);
+}
+
+.todo_completed_button:hover {
+    background-color: var(--todolist-taskitemcompleted-button-bg-color-hover);
 }
 
 .todo_complete_button:hover {
@@ -145,12 +166,7 @@
     background-color: var(--todolist-deletebutton-hover-bg-color);
 }
 
-.todo_loading {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
+
 
 .todo_empty {
     position: absolute;

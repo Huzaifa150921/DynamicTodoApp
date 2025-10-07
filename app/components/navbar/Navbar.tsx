@@ -1,4 +1,3 @@
-import React from 'react'
 import styles from './navbar.module.css'
 import { auth } from '@/app/lib/Auth'
 import { LogoutButton } from '@/app/components/uielements/button/logout/LogoutButton'
