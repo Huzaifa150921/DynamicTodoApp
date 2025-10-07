@@ -1,5 +1,5 @@
 import { Handler } from "@netlify/functions";
-import { prisma } from "@/app/lib/Prisma";
+import { prisma } from "../../app/lib/Prisma";
 import nodemailer from "nodemailer";
 
 async function sendEmail(to: string, subject: string, html: string) {
