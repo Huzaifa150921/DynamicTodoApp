@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import "@/app/lib/CronEmail"
+// import "@/app/lib/CronEmail"
 import Navbar from "@/app/components/navbar/Navbar";
 import Notifier from "@/app/components/uielements/toast/Notifier";
 const geistSans = Geist({

@@ -39,8 +39,8 @@ async function sendTaskReminders() {
     if (!user.email || user.Task.length === 0) continue;
 
     const tasksList = user.Task.map(
-      (t) =>
-        `<tr>
+      (t) => `
+        <tr>
           <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>${t.title}</strong></td>
           <td style="padding: 8px; border-bottom: 1px solid #ddd;">${t.description || "-"}</td>
           <td style="padding: 8px; border-bottom: 1px solid #ddd;">${t.duedate.toDateString()}</td>
@@ -75,10 +75,20 @@ async function sendTaskReminders() {
 
 export const handler: Handler = async () => {
   try {
+    console.log("Running sendReminders function...");
     await sendTaskReminders();
-    return { statusCode: 200, body: "Task reminders sent successfully" };
-  } catch (err) {
-    console.error(err);
-    return { statusCode: 500, body: "Error sending task reminders" };
+    return {
+      statusCode: 200,
+      body: "✅ Task reminders sent successfully",
+    };
+  } catch (err: any) {
+    console.error("❌ Error in sendReminders:", err);
+    return {
+      statusCode: 500,
+      body: JSON.stringify({
+        message: "Error sending task reminders",
+        error: err.message || err,
+      }),
+    };
   }
 };

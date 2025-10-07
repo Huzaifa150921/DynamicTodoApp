@@ -1,5 +1,14 @@
+[build]
+  command = "npx prisma generate && next build"
+  publish = ".next"
+
 [functions]
   directory = "netlify/functions"
+  node_bundler = "esbuild"
 
-[functions.sendReminders]
-  schedule = "18 19 * * *"
+[[plugins]]
+  package = "@netlify/plugin-prisma"
+
+[[scheduled]]
+  function = "sendReminders"
+  cron = "18 19 * * *"
