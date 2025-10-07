@@ -6,9 +6,6 @@
   directory = "netlify/functions"
   node_bundler = "esbuild"
 
-[[plugins]]
-  package = "@netlify/plugin-prisma"
-
 [[scheduled]]
   function = "sendReminders"
   cron = "18 19 * * *"
