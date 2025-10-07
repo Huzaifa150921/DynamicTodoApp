@@ -131,14 +131,8 @@
     transition: all 0.2s;
 }
 
-.todo_complete_button {
-    background-color: var(--todolist-taskitem-button-bg-color);
-    color: var(--todolist-taskitembutton-text-color);
-}
 
-.todo_completed_button {
-    background-color: var(--todolist-taskitemcompleted-button-bg-color);
-}
+
 
 .todo_completed_button:hover {
     background-color: var(--todolist-taskitemcompleted-button-bg-color-hover);
@@ -148,19 +142,10 @@
     background-color: var(--todolist-taskitembutton-hover-bg-color);
 }
 
-.todo_edit_button {
-    background-color: var(--todolist-editbutton-bg-color);
-    color: var(--todolist-editbutton-text-color);
-}
-
 .todo_edit_button:hover {
     background-color: var(--todolist-editbutton-hover-bg-color);
 }
 
-.todo_delete_button {
-    background-color: var(--todolist-deletebutton-bg-color);
-    color: var(--todolist-deletebutton-text-color);
-}
 
 .todo_delete_button:hover {
     background-color: var(--todolist-deletebutton-hover-bg-color);

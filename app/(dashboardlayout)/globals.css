@@ -74,15 +74,10 @@
     --todolist-taskitem-completed-span-text-color: #6b7280;
     --todolist-taskitem-button-bg-color: #3b82f6;
     --todolist-taskitembutton-text-color: #ffffff;
-    --todolist-taskitembutton-hover-bg-color: #2563eb;
-    --todolist-taskitemcompleted-button-bg-color: rgb(132, 255, 132);
-    --todolist-taskitemcompleted-button-bg-color-hover: rgb(93, 255, 93);
-    --todolist-editbutton-bg-color: #fbbf24;
-    --todolist-editbutton-text-color: #111827;
-    --todolist-editbutton-hover-bg-color: #f59e0b;
-    --todolist-deletebutton-bg-color: #ef4444;
-    --todolist-deletebutton-text-color: #ffffff;
-    --todolist-deletebutton-hover-bg-color: #dc2626;
+    --todolist-taskitembutton-hover-bg-color: #bbd1ff;
+    --todolist-taskitemcompleted-button-bg-color-hover: rgb(190, 255, 190);
+    --todolist-editbutton-hover-bg-color: #ffd793;
+    --todolist-deletebutton-hover-bg-color: #ffbebe;
     --todolist-dashboardbtn-bg-color: #10b981;
     --todolist-dashboardbtn-text-color: #ffffff;
     --todolist-dashboardbtn-hover-bg-color: #059669;
@@ -102,7 +97,8 @@
     --todolistform-cancelbtn-text-color: #374151;
     --todolistform-cancelbtn-hover-bg-color: #e5e7eb;
 
-
+    /* shimmer  */
+    --shimmer-shadow-color: rgba(0, 0, 0, 0.144);
 
 
 

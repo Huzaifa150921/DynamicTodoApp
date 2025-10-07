@@ -126,13 +126,13 @@ export default function TodoList() {
 
                                 {task.completed ?
                                     <IoIosCheckmarkCircleOutline className={styles.todo_completed_button} onClick={() => handleToggleComplete(task.id, task.completed)} size={50} color="green" /> :
-                                    <IoIosCheckmarkCircleOutline className={styles.todo_complete_button} onClick={() => handleToggleComplete(task.id, task.completed)} size={50} />
+                                    <IoIosCheckmarkCircleOutline className={styles.todo_complete_button} onClick={() => handleToggleComplete(task.id, task.completed)} size={50} color="blue" />
 
                                 }
 
-                                <FaRegEdit className={styles.todo_edit_button} onClick={() => showForm(task)} size={50} />
+                                <FaRegEdit className={styles.todo_edit_button} onClick={() => showForm(task)} size={50} color="black" />
 
-                                <MdDelete className={styles.todo_delete_button} onClick={() => handleDeleteTask(task.id)} size={50} />
+                                <MdDelete className={styles.todo_delete_button} onClick={() => handleDeleteTask(task.id)} size={50} color="red" />
                             </div>
                         </div>
                     ))}
