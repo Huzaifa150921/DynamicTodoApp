@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+/app/lib/CronEmail.tsx
 /.pnp
 .pnp.*
 .yarn/*

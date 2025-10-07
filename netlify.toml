@@ -8,4 +8,4 @@
 
 [[scheduled]]
   function = "sendReminders"
-  cron = "18 19 * * *"
+  cron = "0 4 * * *"
