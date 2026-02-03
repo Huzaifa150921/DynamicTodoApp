@@ -42,7 +42,7 @@ A **full-featured Dynamic Todo Application** built with **Next.js** that allows 
 ## 🌐 Live Demo
 
 🚀 **Live App:**  
-👉 https://your-live-demo-link.vercel.app
+👉 https://todoapp12323.netlify.app
 
 ---
 
