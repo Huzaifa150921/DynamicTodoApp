@@ -1,10 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ✅ Dynamic Todo App
 
-## Getting Started
+A **full-featured Dynamic Todo Application** built with **Next.js** that allows users to manage tasks efficiently with **Google authentication**, **calendar-based scheduling**, and **automated email reminders**.
 
-First, run the development server:
+---
+
+## 🚀 Features
+
+- 🔐 **Google Authentication**
+  - Secure login using Google OAuth
+  - User-specific and private todo lists
+
+- 📝 **Todo Management**
+  - Add, update, and delete tasks
+  - Mark tasks as completed
+
+- 📅 **Calendar Integration**
+  - Create tasks for a specific date
+  - View and manage todos directly from the calendar
+
+- ⏰ **Automated Email Reminders**
+  - Email notifications sent automatically when a task’s due date arrives
+  - Ensures users never miss important tasks
+
+- ⚡ **Fast & Responsive UI**
+  - Real-time updates
+  - Smooth user experience
+
+---
+
+## 🛠️ Tech Stack
+
+- **Framework:** Next.js (App Router)
+- **Authentication:** Google OAuth (NextAuth)
+- **Database:** MongoDB / Prisma
+- **Email Service:** Nodemailer / SMTP
+- **Styling:** Tailwind CSS
+- **Deployment:** Vercel
+
+---
+
+## 🌐 Live Demo
+
+🚀 **Live App:**  
+👉 https://your-live-demo-link.vercel.app
+
+---
+
+## 📦 Getting Started
+
+### Prerequisites
+
+- Node.js (v18+)
+- npm / yarn / pnpm / bun
+- Google OAuth credentials
+- Email service credentials
+
+---
+
+### Installation
 
 ```bash
+git clone https://github.com/your-username/dynamic-todo-app.git
+cd dynamic-todo-app
+npm install
+# or
+yarn install
+# or
+pnpm install
+# or
+bun install
+```
+### Run the App Locally
+``` bash
 npm run dev
 # or
 yarn dev
@@ -12,25 +79,14 @@ yarn dev
 pnpm dev
 # or
 bun dev
+
 ```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ⭐ Support
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+If you like this project and find it helpful, please consider giving it a ⭐ on GitHub.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Your support motivates me to keep improving and adding new features 🙌
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
